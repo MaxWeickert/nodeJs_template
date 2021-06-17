@@ -2,7 +2,6 @@ const express = require("express");
 const app = express();
 const { response } = require("express");
 var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
-var routes = require("./routes/routes");
 
 app.get("/api/host", function (req, res) {
   res.send(
@@ -12,7 +11,8 @@ app.get("/api/host", function (req, res) {
 
 app.use(express.static("."));
 
-routes.getAPI(app);
+var getApi = require("./routes/getApi");
+getApi(app);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, function () {

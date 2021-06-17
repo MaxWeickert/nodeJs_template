@@ -36,4 +36,4 @@ function getAPI(app) {
     });
 }
 
-module.exports.getAPI = getAPI;
+module.exports = getAPI;
