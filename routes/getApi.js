@@ -3,7 +3,7 @@ function getAPI(app) {
 		var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 		
 		var requestBody = "";
-		var url = ""; //fill in API URL
+		var url = "https://ko1b91ida2.execute-api.us-east-1.amazonaws.com/test/buckets"; //fill in API URL
 		
 		var client = new XMLHttpRequest();
 		client.open(

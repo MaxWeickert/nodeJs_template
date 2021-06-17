@@ -11,7 +11,7 @@ function getAPI() {
 		if (this.readyState == this.DONE) {
 			if(this.responseText) {
 				var responseJSON = JSON.parse(this.responseText);
-				var display = responeJSON;
+				var display = this.responseText;
 
 				document.getElementById("workspace").innerHTML = display;
 				console.log({responseJSON});
