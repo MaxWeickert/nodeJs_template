@@ -1,0 +1,62 @@
+* {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+body {
+  font-family: Arial;
+  margin: 20px;
+}
+
+h2 {
+  color: black;
+}
+
+.header {
+  padding: 40px;
+  text-align: left;
+  background: #1abc9c;
+  color: white;
+}
+
+.main {
+  flex: 80%;
+  background-color: white;
+  padding: 20px;
+}
+
+.footer {
+  text-align: center;
+  background: #ddd;
+  position: fixed;
+  bottom: 0px;
+  width: 90%;
+}
+
+.box1 {
+  float: left;
+  width: 10%;
+  margin-right: 2%;
+  padding: 10px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+.box2 {
+  float: right;
+  width: 80%;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+.marginTop {
+  margin-top: 5px;
+}
+
+.form {
+  display: inline-table;
+}
+
+.margin {
+  margin: 5px;
+}

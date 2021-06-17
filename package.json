@@ -1,0 +1,16 @@
+{
+  "name": "nodejs_template",
+  "version": "0.0.1",
+  "description": "Template for a NodeJs Application",
+  "main": "index.js",
+  "scripts": {
+    "test": "none",
+	"start": "nodemon index.js"
+  },
+  "author": "MaxWeickert",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1",
+    "xmlhttprequest": "^1.8.0"
+  }
+}
