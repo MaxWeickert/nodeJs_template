@@ -6,6 +6,7 @@
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="css/main.css" />
+    <script src="https://cdn.plot.ly/plotly-latest.min.js" charset="utf-8"></script>
 
     <meta name="theme-color" content="#fafafa" />
   </head>
@@ -22,15 +23,37 @@
               <form id="form" class="form">
                   <fieldset>
                       <legend><b>Choose Action</b></legend>
-                      <button type="button" onclick="getAPI()">Get API Buckets</button><br><br>  
+                      <button type="button" onclick="getAPI()">Get API Buckets</button><br><br>
+                      <button type="button" onclick="getRawData()">Get Machine Status for</button><br><br>
                    </fieldset>
               </form>
           </div>
           <div id="workspace" class="box2">
-              <!--Hier ist Platz für Charts-->
+            <p><b>Buckets:</b> <div id="bucketsDisplay"></div></p>
+            <div id="statusChart" class="chart"></div>
+            <!--Hier ist noch mehr Platz für Charts-->
           </div>
         </div>
     </div>
+    <script>
+      Plotly.newPlot('statusChart', [{
+        y:[],
+        name: "Machine 1",
+        mode: 'markers',
+        type: 'scatter',
+        marker: {size:10},
+        text: []
+      }],{
+        title:'Maschinenstatus',
+        xaxis:{
+          title: 'Timesteps'
+        },
+        yaxis:{
+          title: 'Message_Type',
+          range: [3,0]
+        }
+      });
+    </script>
     <!--<div class="footer">
       <p>
         Footer

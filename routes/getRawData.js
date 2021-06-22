@@ -1,9 +1,9 @@
-function getAPI(app) {
-    app.get("/api", function (req, res) {
+function getRawData(app) {
+    app.get("/rawData", function (req, res) {
 		var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 		
 		var requestBody = "";
-		var url = "https://ko1b91ida2.execute-api.us-east-1.amazonaws.com/api/buckets"; //fill in API URL
+		var url = "https://ko1b91ida2.execute-api.us-east-1.amazonaws.com/api/raw-data?start=-1m"; //fill in API URL
 		
 		var client = new XMLHttpRequest();
 		client.open(
@@ -32,8 +32,8 @@ function getAPI(app) {
 		};
 		client.send(requestBody);
   
-		console.log("Redirected to getAPI..");
+		console.log("Redirected to getRawData..");
     });
 }
 
-module.exports = getAPI;
+module.exports = getRawData;
