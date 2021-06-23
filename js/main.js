@@ -1,6 +1,7 @@
 function getAPI() {
 	var requestBody = "";
 
+	//HTTP Request an die Node.js-Route initialisieren und auslösen
 	var client = new XMLHttpRequest();
 	client.open("get", "/api");
 
@@ -10,9 +11,11 @@ function getAPI() {
 	client.onreadystatechange = function () {
 		if (this.readyState == this.DONE) {
 			if(this.responseText) {
+				//Empfangen der Antwort der Node.js-Route
 				var responseJSON = JSON.parse(this.responseText);
 				var display = this.responseText;
 
+				//Verarbeitung der empfangenen Daten, wenn Daten vorhanden sind
 				document.getElementById("bucketsDisplay").innerHTML = display;
 				console.log({responseJSON});
 			}
@@ -24,6 +27,7 @@ function getAPI() {
 function getRawData() {
 	var requestBody = "";
 
+	//HTTP Request an die Node.js-Route initialisieren und auslösen
 	var client = new XMLHttpRequest();
 	client.open("get", "/rawData");
 
@@ -33,11 +37,13 @@ function getRawData() {
 	client.onreadystatechange = function () {
 		if (this.readyState == this.DONE) {
 			if(this.responseText) {
+				//Empfangen der Antwort der Node.js-Route
 				var responseJSON = JSON.parse(this.responseText);
 				if(responseJSON.messages) {
-					var information;
+					//Verarbeitung der empfangenen Daten, wenn Daten vorhanden sind
 					responseJSON.messages.forEach(m => {
 						var infoText = getInfoText(m.machine, m.message_type, m.message);
+						//Aktualisieren des Plotly-Graphen
 						Plotly.extendTraces('statusChart', {
 							x:[[new Date(m.timestamp)]],
 							y:[[parseInt(m.message_type)]],

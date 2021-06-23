@@ -1,7 +1,6 @@
 const express = require("express");
 const app = express();
 const { response } = require("express");
-var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 
 app.get("/api/host", function (req, res) {
   res.send(
@@ -11,11 +10,11 @@ app.get("/api/host", function (req, res) {
 
 app.use(express.static("."));
 
-//get routes
+//Dateien der Node.js-Routen laden
 var getApi = require("./routes/getApi");
 var getRawData = require("./routes/getRawData");
 
-//initialize routes
+//Node.js-Routen initialisieren
 getApi(app);
 getRawData(app);
 

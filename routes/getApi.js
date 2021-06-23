@@ -3,8 +3,11 @@ function getAPI(app) {
 		var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 		
 		var requestBody = "";
+
+		//URL der Zielroute der API
 		var url = "https://ko1b91ida2.execute-api.us-east-1.amazonaws.com/api/buckets"; //fill in API URL
 		
+		//HTTP Request an die API initialisieren und auslösen
 		var client = new XMLHttpRequest();
 		client.open(
 			"get",
@@ -14,12 +17,14 @@ function getAPI(app) {
 		client.setRequestHeader("Accept", "application/json");
 		client.setRequestHeader("Content-Type", "application/json");
   
-		//Only if Authorization is needed
+		//Nur wenn eine Authorizierung notwendig ist
 		//client.setRequestHeader("Authorization", "Basic " + credentials);
   
 		client.onreadystatechange = function () {
 			if (this.readyState == this.DONE) {
+				//Erfolg des API-Calls abfragen
 				if(this.status >= 200 && this.status < 300) {
+					//Antwort der Node.js-Route senden
 					res.status(this.status).send(this.responseText);
 					console.log("Status: ", this.status);
 				}

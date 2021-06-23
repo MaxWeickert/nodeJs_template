@@ -30,12 +30,14 @@
           </div>
           <div id="workspace" class="box2">
             <p><b>Buckets:</b> <div id="bucketsDisplay"></div></p>
+            <!--Integrieren des Plotly-Graphen in die Oberfläche-->
             <div id="statusChart" class="chart"></div>
             <!--Hier ist noch mehr Platz für Charts-->
           </div>
         </div>
     </div>
     <script>
+      //Initialisieren des Plotly-Graphen
       Plotly.newPlot('statusChart', [{
         x:[],
         y:[],
