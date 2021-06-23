@@ -3,7 +3,7 @@ function getRawData(app) {
 		var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 		
 		var requestBody = "";
-		var url = "https://ko1b91ida2.execute-api.us-east-1.amazonaws.com/api/raw-data?start=-1m"; //fill in API URL
+		var url = "https://ko1b91ida2.execute-api.us-east-1.amazonaws.com/api/raw-data?start=-5m"; //fill in API URL
 		
 		var client = new XMLHttpRequest();
 		client.open(

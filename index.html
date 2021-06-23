@@ -24,7 +24,7 @@
                   <fieldset>
                       <legend><b>Choose Action</b></legend>
                       <button type="button" onclick="getAPI()">Get API Buckets</button><br><br>
-                      <button type="button" onclick="getRawData()">Get Machine Status for</button><br><br>
+                      <button type="button" onclick="getRawData()">Get Machine Status</button><br><br>
                    </fieldset>
               </form>
           </div>
@@ -37,11 +37,14 @@
     </div>
     <script>
       Plotly.newPlot('statusChart', [{
+        x:[],
         y:[],
         name: "Machine 1",
         mode: 'markers',
         type: 'scatter',
-        marker: {size:10},
+        marker: {
+          size:10
+        },
         text: []
       }],{
         title:'Maschinenstatus',
