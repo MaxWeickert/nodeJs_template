@@ -1,5 +1,3 @@
-[[_TOC_]]
-
 ## 1 Einleitung
 
 In diesem Kapitel soll es darum gehen, wie die API Schnittstelle, welche mittels dem AWS API Gateway zur Verfügung gestellt wurde, getestet und konsumiert werden kann.
@@ -83,7 +81,15 @@ Das Hinzufügen von Tests wird innerhalb des Requests auf folgende Art und Weise
 
 
 
-Für das BPA-Praktikum wird folgender JavaScript-Code für die Tests der Route zu den Metrics (bzw. CalculatedData) benötigt:
+<b>Aufgabe</b>
+Erstellen Sie die für die von Ihnen im Praktikumsteil "REST API" angelegte Route einen Request in Postman mit mindestens einem angelegtem Test.
+In diesem Link finden Sie dazu fertige Testskripte, die Teils direkt oder leicht abgewandelt anwendbar auf diese Route sind.
+
+```http
+https://learning.postman.com/docs/writing-scripts/script-references/test-examples/#assertion-deep-equality-error
+```
+
+Für das BPA-Praktikum kann folgender JavaScript-Code für einen Test der Route zu den Metrics (bzw. CalculatedData) verwendet werden:
 
 ```js script
 const statusCode = pm.response.code;
@@ -92,16 +98,6 @@ const jsonData = pm.response.json();
 
 pm.test("Successful GET request", () => {
   pm.expect(statusCode).to.be.oneOf([200,204]);
-});
-
-pm.test("Content-Type header is application/json", () => {
-  pm.expect(headers.get('Content-Type')).to.eql('application/json');
-});
-
-pm.test("Test data type of the response", () => {
-  pm.expect(jsonData).to.be.an("object");
-  pm.expect(jsonData.metrics).to.be.an("array");
-  pm.expect(jsonData.metrics[0].timestamp).to.be.a("string");
 });
 ```
 
