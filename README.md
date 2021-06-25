@@ -7,7 +7,8 @@ Für das Testen der API wird hier die Anwendung Postman verwendet, welche eine s
 Das Konsumieren der API wird hier beispielhaft mithilfe einer Node.js-Anwendung realisiert. Postman und Node.js fügen sich wie folgt in die Zielarchitektur ein:
 
 
-![components](uploads/2a00b173c75156b9f21fba232eec900e/components.png)
+![components](https://user-images.githubusercontent.com/41301931/123372592-22bad100-d584-11eb-9443-ab18fc5439f7.png)
+
 
 
 Quellen der des Node.js- und Postman-Bildes innerhalb des obigen Bildes:
@@ -36,13 +37,15 @@ https://www.postman.com/downloads/
 Nach dem starten der Anwendung in der Desktop-Anwendung (analog auch in der Webversion) muss zunächst eine Collection angelegt und ein Name für diese vergeben werden.
 
 
-![1_postman](uploads/728dd59ace74bb06621efcfdc9bad06a/1_postman.png)
+![1_postman](https://user-images.githubusercontent.com/41301931/123372602-2b130c00-d584-11eb-836c-28e6b0ebf5f9.png)
+
 
 
 Nachdem die Collection hinzugefügt wurde, kann ein Request angelegt werden. Durch einen Rechtsklick auf die neu angelegte Collection wird dies realisiert und analog zu der Collection ein Name vergeben werden.
 
 
-![2_postman](uploads/d3a64b23f982b2daaddb9fee2ce65668/2_postman.png)
+![2_postman](https://user-images.githubusercontent.com/41301931/123372606-2ea69300-d584-11eb-978a-ce071311482d.png)
+
 
 
 Nun kann der Request konfiguriert werden. Dafür sind mehrere Schritte notwendig:
@@ -58,7 +61,8 @@ Nun kann der Request konfiguriert werden. Dafür sind mehrere Schritte notwendig
 Im folgenden Screenshot sind die Schritte noch einmal anhand der Oberfläche dargestellt.
 
 
-![postman](uploads/99ad4ad69b4efa4996b73445b8e504fd/postman.png)
+![postman](https://user-images.githubusercontent.com/41301931/123372623-36663780-d584-11eb-8412-cb1556842c66.png)
+
 
 
 Es ist auch möglich eine Authentifizierung über den Reiter "Authorization" innerhalb eines Request zu hinterlegen. Dies ist aber nicht nötig im Rahmen dieser Einführung. Außerdem können rechts neben dem Antwortstatus auch die für den API-Call benötigte Zeit sowie die benötigten Speichermengen der Datenübertragung (Request & Response) abgelesen werden.
@@ -75,7 +79,8 @@ https://learning.postman.com/docs/writing-scripts/script-references/test-example
 Das Hinzufügen von Tests wird innerhalb des Requests auf folgende Art und Weise realisiert:
 
 
-![postman_tests](uploads/225742ba1f8d08f11765a3a574d67ac5/postman_tests.png)
+![postman_tests](https://user-images.githubusercontent.com/41301931/123372637-3d8d4580-d584-11eb-9237-71be0e511844.png)
+
 
 
 Für das BPA-Praktikum wird folgender JavaScript-Code für die Tests der Route zu den Metrics (bzw. CalculatedData) benötigt:
@@ -105,13 +110,15 @@ pm.test("Test data type of the response", () => {
 Wenn das vorherige Kapitel 2.2 erfolgreich absolviert wurde, dann können nun auch automatisierte Tests umgesetzt werden. Dafür wird zunächst in den Monitoring-Bereich von Postman gewechselt und dort ein neuer Monitor angelegt. Danach ist es möglich den Monitor zu konfigurieren. Neben dem Namen können auch die zu überwachende Collection, das zu verwendende Environment, der Timer und die E-Mail-Adresse, welcher bei auftretenden Fehlern eine E-Mail zugesandt wird, festgelegt werden. Der Ablauf ist wie folgt:
 
 
-![postman_monitor](uploads/47ab9e57d54ad70ddcc52b03f68b373a/postman_monitor.png)
+![postman_monitor](https://user-images.githubusercontent.com/41301931/123372656-43832680-d584-11eb-8f7b-29fd705d3ca5.png)
+
 
 
 Danach kann auch schon mithilfe der Schaltfläche "Run" das Monitoring begonnen werden.
 
 
-![postman_monitoring](uploads/c0b317b870d5c0beb9d8c46e8d3548eb/postman_monitoring.png)
+![postman_monitoring](https://user-images.githubusercontent.com/41301931/123372666-48e07100-d584-11eb-856b-02d23cd12bbb.png)
+
 
 
 Für weiterführende Information zu Postman selbst, den verwendeten Sicherheitsstandards und der Dokumentation ist die Internetseite von Postman sehr zu empfehlen und ist unter diesem Link erreichbar.
